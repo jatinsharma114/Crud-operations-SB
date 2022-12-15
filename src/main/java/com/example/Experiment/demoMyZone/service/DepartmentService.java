@@ -46,7 +46,9 @@ public class DepartmentService {
         System.out.println("The object from DB is here--------->  " +depDetails);
 
         if(!depDetails.isPresent())
+        	
         {
+            System.out.println("not exist");
             System.out.println("not exist");
         }
 
