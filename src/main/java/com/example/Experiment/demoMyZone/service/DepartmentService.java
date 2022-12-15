@@ -52,10 +52,10 @@ public class DepartmentService {
 
         Department optionalObjFromDB = depDetails.get();
 //---------------------------------------------------------------------
-        optionalObjFromDB.setDepartmentAddress(departmentUpdateRequest.getDepartmentAddress());
-        optionalObjFromDB.setDepartmentCode(departmentUpdateRequest.getDepartmentCode());
-        //        Department Obj                   JSON Folate (Client Update Data)
-        optionalObjFromDB.setDepartmentName(departmentUpdateRequest.getDepartmentName());
+//        optionalObjFromDB.setDepartmentAddress(departmentUpdateRequest.getDepartmentAddress());
+//        optionalObjFromDB.setDepartmentCode(departmentUpdateRequest.getDepartmentCode());
+//        //        Department Obj                   JSON Folate (Client Update Data)
+//        optionalObjFromDB.setDepartmentName(departmentUpdateRequest.getDepartmentName());
 
         //Saving Data again in Data-Base
         return departmentRepository.save(optionalObjFromDB);

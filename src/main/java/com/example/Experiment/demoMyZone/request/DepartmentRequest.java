@@ -21,12 +21,8 @@ public class DepartmentRequest {
 
 
     //Values set in Models
-    public Department to(){
+    public String to(){
 
-        return Department.builder()
-                .departmentName(departmentName)
-                .departmentCode(departmentCode)
-                .departmentAddress(departmentAddress)
-                .build();
+        return "";
     }
 }
