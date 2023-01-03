@@ -1,6 +1,8 @@
 package com.example.Experiment.demoMyZone;
 
 import org.springframework.boot.SpringApplication;
+
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -14,9 +16,12 @@ public class DemoMyZoneApplication {
 		
 		String str1 = null;
 
+		String str2 = null;
+		
 	    String formatStr = String.format("Language: %s", str1);
-
-	    System.out.println(formatStr);
+	    String formatStr2 = String.format("Language: %s", str2);
+	    
+	    System.out.println(formatStr + "formatStr2 : " + formatStr2);
 	    
 	    
 	}
