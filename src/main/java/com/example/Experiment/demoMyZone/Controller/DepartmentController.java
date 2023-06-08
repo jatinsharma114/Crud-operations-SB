@@ -4,6 +4,7 @@ package com.example.Experiment.demoMyZone.Controller;
 
 public class DepartmentController {
 
+
     @Autowired
     DepartmentService departmentService;
 
@@ -35,6 +36,7 @@ public class DepartmentController {
 
         return departmentService.updateDepartment(depatmentId, departmentUpdateRequest);
     }
+
 
 
 }
