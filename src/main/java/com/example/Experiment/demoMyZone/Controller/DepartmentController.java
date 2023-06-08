@@ -1,16 +1,7 @@
 package com.example.Experiment.demoMyZone.Controller;
 
-import com.example.Experiment.demoMyZone.models.Department;
-import com.example.Experiment.demoMyZone.request.DepartmentRequest;
-import com.example.Experiment.demoMyZone.request.DepartmentUpdateRequest;
-import com.example.Experiment.demoMyZone.service.DepartmentService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.util.List;
 
-@RestController
 public class DepartmentController {
 
     @Autowired
@@ -21,6 +12,7 @@ public class DepartmentController {
     @PostMapping("/department")
     public Department saveDepartment(@Valid @RequestBody DepartmentRequest departmentRequest){
         return departmentService.saveDepartment(departmentRequest.to());
+        
     }
     //2. -------------------------------------------------------------------------------------------------
     @GetMapping("/department/alldata")
@@ -43,5 +35,6 @@ public class DepartmentController {
 
         return departmentService.updateDepartment(depatmentId, departmentUpdateRequest);
     }
+
 
 }

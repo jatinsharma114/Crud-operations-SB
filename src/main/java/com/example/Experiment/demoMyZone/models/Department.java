@@ -19,7 +19,7 @@ import javax.persistence.Id;
 public class Department {
 
     //Connecting layer of Hibernate with Data Base
-    //That's why here our ID and AUTO.!
+    //That's why here our ID and AUTO.
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private int departmentId;

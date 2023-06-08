@@ -17,7 +17,7 @@ public class DepartmentUpdateRequest {
     private String departmentCode;
 
 
-    //Values set in Models
+    //Values set in Modelss
     public Department to(){
 
         return Department.builder()

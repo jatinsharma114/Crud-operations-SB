@@ -25,7 +25,7 @@ public class DepartmentService {
         return  departmentRepository.findAll();
     }
 
-
+    //ok
     public Department getById(int depaartmentId){
         return departmentRepository.findById(depaartmentId).orElse(null);
     }
