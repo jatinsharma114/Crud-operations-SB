@@ -12,12 +12,6 @@ public class DemoMyZoneApplication {
 
 		SpringApplication.run(DemoMyZoneApplication.class, args);
 		
-		String str1 = null;
-
-	    String formatStr = String.format("Language: %s", str1);
-
-	    System.out.println(formatStr);
-	    
 	    
 	}
 }

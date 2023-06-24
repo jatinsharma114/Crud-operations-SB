@@ -2,7 +2,10 @@ package com.example.Experiment.demoMyZone.models;
 
 
 import lombok.*;
+
 import org.springframework.stereotype.Component;
+
+import com.example.Experiment.demoMyZone.request.DepartmentRequest;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
