@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Experiment.demoMyZone.models.Department;
 import com.example.Experiment.demoMyZone.request.DepartmentRequest;
@@ -18,12 +19,17 @@ import com.example.Experiment.demoMyZone.service.DepartmentService;
 
 import antlr.collections.List;
 
+@RestController
 public class DepartmentController {
 
 
     @Autowired
     DepartmentService departmentService;
-//sdahjsdgashkdgskj
+
+    @GetMapping("/go")
+    public String saveDepartment1(){
+        return "PArimal bhai <###############";
+    }
 
     //1. -------------------------------------------------------------------------------------------------
     @PostMapping("/department")
@@ -51,7 +57,4 @@ public class DepartmentController {
 
         return departmentService.updateDepartment(depatmentId, departmentUpdateRequest);
     }
-
-
-
 }
