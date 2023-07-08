@@ -2,6 +2,7 @@ package com.example.Experiment.demoMyZone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class DemoMyZoneApplication {
@@ -10,14 +11,11 @@ public class DemoMyZoneApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(DemoMyZoneApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(DemoMyZoneApplication.class, args);
+		Aliean bean = context.getBean(Aliean.class);
 		
-		String str1 = null;
-
-	    String formatStr = String.format("Language: %s", str1);
-
-	    System.out.println(formatStr);
-	    
+		bean.show();
+		
 	    
 	}
 }

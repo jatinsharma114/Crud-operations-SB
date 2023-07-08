@@ -1,23 +1,44 @@
 package com.example.Experiment.demoMyZone.Controller;
 
+import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.example.Experiment.demoMyZone.models.Department;
+import com.example.Experiment.demoMyZone.request.DepartmentRequest;
+import com.example.Experiment.demoMyZone.request.DepartmentUpdateRequest;
+import com.example.Experiment.demoMyZone.service.DepartmentService;
+
+import antlr.collections.List;
+
+@RestController
 public class DepartmentController {
 
 
     @Autowired
     DepartmentService departmentService;
 
+    @GetMapping("/go")
+    public String saveDepartment1(){
+        return "PArimal bhai <###############";
+    }
 
     //1. -------------------------------------------------------------------------------------------------
     @PostMapping("/department")
     public Department saveDepartment(@Valid @RequestBody DepartmentRequest departmentRequest){
         return departmentService.saveDepartment(departmentRequest.to());
-        
     }
     //2. -------------------------------------------------------------------------------------------------
     @GetMapping("/department/alldata")
-    public List<Department> getDapartmentdata(){
+    public java.util.List<Department> getDapartmentdata(){
         return departmentService.getDepartmentData();
     }
     //3. -------------------------------------------------------------------------------------------------
@@ -36,7 +57,4 @@ public class DepartmentController {
 
         return departmentService.updateDepartment(depatmentId, departmentUpdateRequest);
     }
-
-
-
 }

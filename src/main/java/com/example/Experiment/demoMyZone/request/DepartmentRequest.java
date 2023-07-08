@@ -2,7 +2,6 @@ package com.example.Experiment.demoMyZone.request;
 
 import com.example.Experiment.demoMyZone.models.Department;
 import lombok.*;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,7 +13,7 @@ import javax.persistence.Id;
 public class DepartmentRequest {
 
 
-    private int departmentId;
+    public int departmentId;
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
@@ -29,4 +28,5 @@ public class DepartmentRequest {
                 .departmentAddress(departmentAddress)
                 .build();
     }
+    
 }
