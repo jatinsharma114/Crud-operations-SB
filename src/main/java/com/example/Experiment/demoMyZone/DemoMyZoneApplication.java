@@ -12,9 +12,9 @@ public class DemoMyZoneApplication {
 	public static void main(String[] args) {
 
 		ConfigurableApplicationContext context = SpringApplication.run(DemoMyZoneApplication.class, args);
-		Aliean bean = context.getBean(Aliean.class);
+		// Aliean bean = context.getBean(Aliean.class);
 		
-		bean.show();
+		// bean.show();
 		
 	    
 	}

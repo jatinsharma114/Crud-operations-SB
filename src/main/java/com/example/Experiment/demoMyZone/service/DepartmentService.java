@@ -38,25 +38,52 @@ public class DepartmentService {
 
 
     public Department updateDepartment(int depatmentId, DepartmentUpdateRequest departmentUpdateRequest) {
-
         //Optional -> JAVA 8
         Optional<Department> depDetails = departmentRepository.findById(depatmentId);
-        System.out.println("The object from DB is here--------->  " +depDetails);
 
-        if(!depDetails.isPresent())
-        {
-            System.out.println("not exist");
-        }
-
-        Department optionalObjFromDB = depDetails.get();
-//---------------------------------------------------------------------
-        optionalObjFromDB.setDepartmentAddress(departmentUpdateRequest.getDepartmentAddress());
-        optionalObjFromDB.setDepartmentCode(departmentUpdateRequest.getDepartmentCode());
-        //        Department Obj                   JSON Folate (Client Update Data)
-        optionalObjFromDB.setDepartmentName(departmentUpdateRequest.getDepartmentName());
-
-        //Saving Data again in Data-Base
-        return departmentRepository.save(optionalObjFromDB);
-
+        if (depDetails.isPresent())  {
+               Department optionalObjFromDB = depDetails.get();
+               
+               optionalObjFromDB.setDepartmentAddress(departmentUpdateRequest.getDepartmentAddress());
+               optionalObjFromDB.setDepartmentCode(departmentUpdateRequest.getDepartmentCode());
+               optionalObjFromDB.setDepartmentName(departmentUpdateRequest.getDepartmentName());
+               System.out.println("Saving object after modify : " + optionalObjFromDB.toString());
+               return departmentRepository.save(optionalObjFromDB);
+            }
+        return null;
     }
+
+
+    //Here we are just updating the particular Data Which User want to Update.
+    //Selected Fileds by the User.
+    public Department updateSomeFiledOfUser(int departmentId, DepartmentUpdateRequest departmentUpdateRequest) {
+        Optional<Department> depDetails = departmentRepository.findById(departmentId);
+    
+        if (depDetails.isPresent()) {
+            Department optionalObjFromDB = depDetails.get();
+            System.out.println("Fetch the object from the DB :: " + optionalObjFromDB);
+    
+
+            //Avoid Unnecessary Calls so store the value in the Object.
+            String departmentAddress = departmentUpdateRequest.getDepartmentAddress();
+            if(departmentAddress != null) {
+                optionalObjFromDB.setDepartmentAddress(departmentAddress);
+            }
+ 
+            String departmentCode= departmentUpdateRequest.getDepartmentCode();
+            if(departmentCode != null) {
+                optionalObjFromDB.setDepartmentCode(departmentCode);
+            }
+            
+            String departmentName = departmentUpdateRequest.getDepartmentName();
+            if(departmentName != null) {
+                optionalObjFromDB.setDepartmentName(departmentName);
+            }
+    
+            System.out.println("Saving object after modify: " + optionalObjFromDB.toString());
+            return departmentRepository.save(optionalObjFromDB);
+        }
+    
+        return null;
+    }    
 }
